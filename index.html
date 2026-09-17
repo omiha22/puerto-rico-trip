@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Puerto Rico Trip Planner · Sept 19–26, 2026</title>
+<style>
+:root{--ink:#17324d;--muted:#66788a;--bg:#f6f3eb;--card:#fff;--sea:#dceff0;--accent:#d9795b;--green:#4f806a;--line:#ddd8cd}
+*{box-sizing:border-box} body{margin:0;font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:#222}
+header{padding:24px 18px 16px;background:linear-gradient(135deg,#dceff0,#fff7e9);border-bottom:1px solid var(--line)}
+h1{margin:0;color:var(--ink);font-size:27px}.sub{color:var(--muted);margin-top:5px}.wrap{max-width:1050px;margin:auto}
+nav{display:flex;gap:8px;overflow:auto;padding:12px 18px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:3}
+button.tab{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:999px;white-space:nowrap}.tab.active{background:var(--ink);color:#fff}
+main{padding:18px}.panel{display:none}.panel.active{display:block}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:0 2px 7px #0000000a}
+.card h3{margin:0 0 6px;color:var(--ink)}.meta{color:var(--muted);font-size:13px;margin:5px 0}.tag{display:inline-block;padding:3px 8px;border-radius:999px;background:var(--sea);font-size:12px;margin:2px}
+.keep{background:#dcecdf}.option{background:#fff0c9}.anchor{background:#f5d9d0}.links a{margin-right:10px;color:#12657a}
+h2{color:var(--ink);margin:5px 0 13px}.note{background:#fff9e8;border-left:4px solid #d5a93c;padding:10px 12px;margin:10px 0;border-radius:7px}
+.day{border-left:4px solid var(--accent)} ul{padding-left:20px}.small{font-size:13px;color:var(--muted)}
+input[type=checkbox]{transform:scale(1.15);margin-right:7px}
+@media(max-width:600px){h1{font-size:23px}main{padding:12px}.card{padding:13px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>🇵🇷 Puerto Rico · Family Trip Planner</h1>
+<div class="sub">Coral Beach, Isla Verde · Sept. 19–26, 2026 · 2 adults + Ariel · flexible, event-led, car-light planning · FINAL WORKING VERSION</div></div></header>
+<nav id="nav" class="wrap">
+<button class="tab active" data-p="events">📅 Events</button>
+<button class="tab" data-p="nocar">🚶 No-Car Menu</button>
+<button class="tab" data-p="car">🚗 Worth a Car?</button>
+<button class="tab" data-p="food">🍴 Food</button>
+<button class="tab" data-p="notes">🧳 Trip Notes</button>
+</nav>
+<main class="wrap">
+
+<section id="events" class="panel active">
+<h2>Events calendar</h2>
+<div class="note">Use events as anchors, not a rigid itinerary. Pick an evening event, then build the morning/afternoon around location, weather and energy. Times below are the working times we researched; re-check shortly before going.</div>
+<div class="grid">
+<div class="card day"><h3>Sat · Sept 19</h3>
+<p><span class="tag anchor">CONFIRMED</span> <b>Noches al Son de Salsa</b><br><b>4:00–9:00 PM</b> · La Placita, Santurce · FREE<br>Arrival is 4 PM / condo ~5 PM, so join later rather than rush.</p>
+<div class="links"><a href="https://www.discoverpuertorico.com/event/noches-al-son-de-salsa/2262" target="_blank">Event</a><a href="https://www.google.com/maps/search/?api=1&query=La+Placita+de+Santurce+Puerto+Rico" target="_blank">Maps</a></div>
+<hr><p><span class="tag keep">KEEP</span> <b>Sounds of Puerto Rico</b><br><b>7:00 PM–2:00 AM</b> · Fairmont El San Juan · FREE · easy walk near condo.</p>
+<div class="links"><a href="https://www.elsanjuanhotel.com/events/sounds-of-puerto-rico-saturdays/" target="_blank">Event</a><a href="https://www.google.com/maps/search/?api=1&query=Fairmont+El+San+Juan+Hotel" target="_blank">Maps</a></div></div>
+
+<div class="card day"><h3>Sun · Sept 20</h3>
+<p><span class="tag option">OPTION</span> <b>Paseo de la Princesa Artisan Market</b><br><b>Starts 9:00 AM; published end time not confirmed.</b> Old San Juan · FREE. Do not sacrifice a relaxed morning just to arrive at opening.</p>
+<p><span class="tag option">OPTION</span> <b>La Factoría live salsa</b><br><b>10:00 PM–2:00 AM</b> · Old San Juan · FREE · likely too late with Ariel.</p></div>
+
+<div class="card day"><h3>Mon · Sept 21</h3>
+<p><span class="tag option">OPTION</span> <b>La Factoría live salsa</b><br><b>10:00 PM–2:00 AM</b> · Old San Juan · FREE · late-night backup.</p></div>
+
+<div class="card day"><h3>Tue · Sept 22</h3>
+<p><span class="tag keep">STRONG OPTION</span> <b>Salsa Tuesdays · Échate Pa'K</b><br><b>6:00–10:00 PM</b> · Carolina · FREE · live salsa, food and dancing; much better timing with Ariel.</p>
+<div class="links"><a href="https://www.salsavida.com/event/puerto-rico/san-juan/salsa-tuesdays-at-echatepak/" target="_blank">Event</a></div></div>
+
+<div class="card day"><h3>Wed · Sept 23</h3>
+<p><span class="tag option">OPTION</span> <b>Miércoles de Salsa</b><br><b>9:00 PM–2:00 AM</b> · Calle Loíza area · FREE · salsa/Cuban timba; late backup.</p></div>
+
+<div class="card day"><h3>Thu · Sept 24</h3>
+<p><span class="tag option">OPTION</span> <b>Jueves de Bailoteo</b><br><b>9:00 PM–2:00 AM</b> · San Juan · FREE · late salsa option.</p></div>
+
+<div class="card day"><h3>Fri · Sept 25</h3>
+<p><span class="tag keep">STRONG FREE OPTION</span> <b>National Estuaries Week cultural evening</b><br><b>6:30–9:30 PM</b> · Museo de Arte de Puerto Rico · FREE with RSVP · documentary/presentation, discussion and reception. Conflicts with Jíbaro Jazz, so choose one.</p>
+<div class="links"><a href="https://estuario.org/events/" target="_blank">Event / RSVP</a><a href="https://www.google.com/maps/search/?api=1&query=Museo+de+Arte+de+Puerto+Rico" target="_blank">Maps</a></div>
+<hr>
+<p><span class="tag keep">STRONG OPTION</span> <b>Jíbaro Jazz</b><br><b>8:00 PM start · doors 6:30 PM</b> · ~$17.06 pp + fees · Puerto Rican jíbaro roots + jazz.</p>
+<div class="links"><a href="https://pietix.com/jibaro-jazz" target="_blank">Event / tickets</a></div>
+<hr><p><span class="tag option">OPTION</span> <b>¡A Gozar con Salsa!</b><br><b>9:00 PM–2:00 AM</b> · Old San Juan · FREE.</p></div>
+
+<div class="card day"><h3>Sat · Sept 26</h3><p>Departure day. Keep intentionally light: coffee, beach if practical, pack and airport.</p></div>
+</div>
+</section>
+
+<section id="nocar" class="panel">
+<h2>No-car activity menu</h2><div class="grid">
+<div class="card"><h3>Old San Juan + Cataño Ferry</h3><span class="tag keep">KEEP</span>
+<p>Historic streets, San Cristóbal, El Morro, San Juan Gate, city walls, Paseo de la Princesa and waterfront. Add the 12-minute public ferry across San Juan Bay to Cataño for waterfront views/local atmosphere.</p>
+<p><b>TIP-BASED TOUR OPTION:</b> Old San Juan Free Walking Tour generally runs at 10 AM for about 2 hours from Plaza Colón. Advance booking required; operator suggests about $10/person. Use this only if we want guided history—the same area can be explored DIY for free.</p>
+<p class="meta">⏱ ½–full day · 🚕 Uber ~20–30 min or 🚌 bus ~45–60 min · 🎟 forts $10/adult; Ariel free; bring America the Beautiful pass · ⛴ ferry $0.50 adult each way</p>
+<div class="links"><a href="https://www.nps.gov/saju/index.htm" target="_blank">NPS</a><a href="https://www.osjfreetour.com/book-online" target="_blank">Tip-based walking tour</a><a href="https://www.puertoricoferry.com/en/routes-schedules/san-juan-catano/" target="_blank">Ferry timetable</a><a href="https://www.google.com/maps/search/?api=1&query=Old+San+Juan+Puerto+Rico" target="_blank">Maps</a></div></div>
+
+<div class="card"><h3>Santurce · market → murals → evening</h3><span class="tag keep">KEEP · deserves separate visit</span>
+<p>Mercado/La Placita while it is still a neighborhood market, Calle Cerra street art, Calle Loíza food/coffee, then transition into dinner, music and evening atmosphere.</p>
+<p><b>FREE:</b> use Discover Puerto Rico's current self-guided Santurce street-art route instead of paying for an art tour.</p>
+<p class="meta">⏱ ½ day into evening · 🚕 ~15 min from Coral Beach · Market working hours: Mon–Sat roughly 6 AM–6 PM; individual vendors vary.</p>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&query=La+Placita+de+Santurce" target="_blank">La Placita Maps</a><a href="https://www.google.com/maps/search/?api=1&query=Calle+Cerra+Santurce+Puerto+Rico" target="_blank">Calle Cerra Maps</a><a href="https://www.discoverpuertorico.com/article/street-art-tour-santurce" target="_blank">FREE street-art guide</a></div></div>
+
+<div class="card"><h3>Escambrón DIY snorkeling</h3><span class="tag keep">KEEP</span>
+<p>Morning shore snorkeling; no paid tour. Treat this as a water outing: return to condo afterward to shower/change rather than dragging wet gear through an evening itinerary.</p>
+<p class="meta">⏱ 2–4 hrs · 🚕 ~15–20 min · 🚌 ~45–60 min including walk/wait estimate · check live bus before leaving · bring own gear</p>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Balneario+El+Escambron+Puerto+Rico" target="_blank">Maps</a></div></div>
+
+<div class="card"><h3>Piñones + Loíza</h3><span class="tag keep">HIGH PRIORITY</span>
+<p>Afro-Puerto Rican coastal culture, frituras/kiosks, La Pocita beach and local atmosphere. <b>Do not choose this just because it is Sunday:</b> we have not found confirmed Sept. 20 live music/bomba, so it stays a flexible daytime option rather than an event anchor.</p>
+<p class="meta">⏱ ½–full day · 🚕 roughly 10–20 min to Piñones depending on stop/traffic · compare Uber/Lyft · no need to use a car solely for this</p>
+<div class="links"><a href="https://copipr.com/" target="_blank">COPI</a><a href="https://www.google.com/maps/search/?api=1&query=La+Pocita+Pinones+Puerto+Rico" target="_blank">La Pocita Maps</a></div></div>
+
+<div class="card"><h3>Río Piedras + UPR + market</h3><span class="tag keep">KEEP · HALF DAY</span>
+<p>University of Puerto Rico campus → Río Piedras commercial streets/Paseo de Diego → traditional market → inexpensive local lunch.</p>
+<p class="meta">🚕 Coral Beach → Sagrado Corazón ~10–15 min, then 🚆 Tren Urbano. Train is frequent compared with AMA buses and serves Universidad + Río Piedras.</p>
+<div class="links"><a href="https://www.ati.pr.gov/transportacion-urbana" target="_blank">Tren Urbano info</a><a href="https://www.google.com/maps/search/?api=1&query=Universidad+de+Puerto+Rico+Rio+Piedras" target="_blank">UPR Maps</a></div></div>
+
+<div class="card"><h3>Condado Lagoon + coast</h3><span class="tag option">ADD-ON</span>
+<p>Walk the lagoon/coast; optional independent paddle/kayak only if rental price is reasonable. Don't buy an excursion just to paddle calm water.</p>
+<p><b>SUN SEPT 20 · National Estuaries Week:</b> free educational/nature programming around Condado Lagoon; Paddle with the Estuary is scheduled 9–11 AM, with discounted equipment rental where eligible. Treat the free land programming as an add-on, not a reason to rush a relaxed morning.</p>
+<p class="meta">⏱ 2–4 hrs · best paired geographically with Condado, not forced onto snorkeling day.</p></div>
+
+<div class="card"><h3>Family coastal biking</h3><span class="tag keep">VERIFIED / KEEP · CALLE LOÍZA PICKUP</span>
+<p><b>Cultura Bicicleta</b> at Taller Comunidad La Goyco, <b>1763 Calle Loíza</b>, has city bikes plus <b>kids bikes</b>. Current rates: <b>$5/hour, $35 for 8 hours, $39 for 24 hours</b>. For 3 bikes, four hours bought hourly is only <b>$60 total</b>; an 8-hour day is $105 total.</p>
+<p><b>Best 4-hour plan:</b> Uber from Coral Beach to Calle Loíza pickup → ride west through the Condado/Atlantic coastal corridor toward Escambrón → use the <b>Paseo Puerta de Tierra</b>, which was designed with an independent bike lane connecting Condado toward Old San Juan → scenic stop around Capitol/Puerta de Tierra → turn around and return bikes. Add inexpensive lunch/coffee on Calle Loíza before or after.</p>
+<p class="meta"><b>Safety accepted for this planner.</b> Use the coastal/protected routing and avoid improvising onto faster traffic streets. Confirm Ariel's physical bike fit at pickup. This is much better value than $10/hour at Piñones.</p>
+<div class="links"><a href="https://www.culturabici.com/bike-rental" target="_blank">Cultura Bicicleta rates</a><a href="https://www.google.com/maps/search/?api=1&query=Taller+Comunidad+La+Goyco+1763+Calle+Loiza+San+Juan" target="_blank">Pickup Maps</a><a href="https://www.google.com/maps/search/?api=1&query=Paseo+Puerta+de+Tierra+San+Juan+Puerto+Rico" target="_blank">Bike path Maps</a></div></div></div>
+</div>
+</section>
+
+<section id="car" class="panel">
+<h2>Worth renting a car?</h2>
+<div class="note">Not commitments. We first enjoy the strong car-free menu. A rental only wins if these experiences add enough unique value. For every future drive: show toll road, toll-free alternative, extra time, parking and all-in rental implications.</div>
+<div class="grid">
+<div class="card"><h3>El Yunque + Luquillo</h3><span class="tag keep">STRONGEST CAR CASE</span>
+<p>DIY rainforest: waterfalls/viewpoints + manageable hike, then Luquillo beach and selected kiosks.</p><p class="meta">🚗 ~35–45+ min depending route/traffic. PR-66 tolled; PR-3 provides toll-free eastern route. Exact toll-free time to be checked when choosing date.</p></div>
+<div class="card"><h3>Puerto Rican coffee-country loop</h3><span class="tag option">KEEP FOR CAR REVIEW</span>
+<p>Hacienda Muñoz is leading candidate: working coffee farm, processing/roasting education, tasting and food. Only worth it if combined into a good mountain/countryside loop.</p>
+<div class="links"><a href="https://www.haciendamunozpr.com/" target="_blank">Hacienda Muñoz</a></div></div>
+<div class="card"><h3>Culebra via Ceiba</h3><span class="tag option">LOWER PRIORITY</span><p>Beautiful, but ferry + waiting + island transportation makes it a very long day when we already have beaches and DIY snorkeling.</p></div>
+<div class="card"><h3>Guavate / lechón</h3><span class="tag option">LOW PRIORITY</span><p>Consider only if car timing coincides with confirmed music/dancing or can be combined with something more distinctive. Driving just for pork isn't enough.</p></div>
+<div class="card"><h3>Laguna Grande bio bay</h3><span class="tag option">OPTION ONLY</span><p>~$180–210 family guided kayak. Unique, but we've decided not to prioritize it. If reconsidered, earlier in trip is preferable because moonlight increases toward the Sept. 26 full moon.</p></div>
+</div></section>
+
+<section id="food" class="panel"><h2>Food layer · matched to where we already plan to be</h2>
+<div class="note">This is the first food layer, not the final restaurant list. Goal: local/value food for adults + at least one simple Ariel option, without crossing town just to eat. We will add exact prices and more market/kiosk choices next.</div>
+<div class="grid">
+<div class="card"><h3>🏠 Coral Beach / Isla Verde</h3>
+<p><b>GROCERY:</b> SuperMax – Isla Verde and Pueblo are full supermarkets; use these to stock condo breakfast, fruit, water, beach lunches and Ariel basics instead of buying every meal out.</p>
+<p><b>Panadería España</b> — strongest practical all-purpose stop: coffee, breakfast, fresh bread/pastries, sandwiches, soups/hot plates and takeout. Current published hours are generally 6 AM–10 PM; good for beach food or grabbing food before an outing.</p>
+<p><b>Piu Bello</b> — easy family backup for breakfast/coffee/gelato, plus burgers/pizza/simple food that works for Ariel.</p>
+<p><b>Mi Casita</b> — nearby Puerto Rican comfort food/mofongo; convenient but recent reviews are inconsistent, so keep as backup rather than a destination meal.</p>
+<div class="links"><a href="https://laespana.net/" target="_blank">Panadería España</a><a href="https://www.google.com/maps/search/?api=1&query=Panaderia+Espana+Isla+Verde+Puerto+Rico" target="_blank">Maps</a></div></div>
+
+<div class="card"><h3>🏰 Old San Juan / Cataño day</h3>
+<p><b>GROCERY:</b> U Go Market or Papo's Grocery for cold drinks, fruit, snacks and picnic supplies while walking Old San Juan.</p>
+<p><b>LOCAL VALUE:</b> <b>Deaverdura</b> is the stronger authentic-food choice: small, casual Puerto Rican cooking, roughly $10–20, and repeatedly recommended by locals/recent travelers for good-value comida criolla. <b>DesHistoria: Birra & Empanadas</b> is the cheap hole-in-the-wall-style stop: roughly $4 empanadas and local beer, useful for a snack/light meal.</p>
+<p class="small">Café Manolín stays as a practical breakfast/lunch backup, but recent local feedback is mixed on whether it still feels genuinely local versus tourist-heavy.</p>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Cafe+Manolin+Old+San+Juan" target="_blank">Maps</a></div></div>
+
+<div class="card"><h3>🎨 Santurce / Calle Loíza</h3>
+<p><b>GROCERY/MARKET:</b> La Placita's daytime produce/meat vendors can supply fruit/snacks; for a full condo grocery run, buy near Coral Beach rather than carrying groceries across town.</p>
+<p><b>HOLE-IN-THE-WALL / LOCAL:</b> <b>La Alcapurria Quemá</b> by La Placita is a small casual Puerto Rican fritura spot ($10–20), especially good for fresh alcapurrias. <b>Café Mariam</b> is an inexpensive everyday cafeteria ($1–10) for Puerto Rican breakfast/lunch. <b>La Casita Blanca</b> is the famous old-school neighborhood fonda if we want a fuller traditional meal.</p>
+<p><b>La Preñá – Calle Loíza</b> — inexpensive stuffed arepas; good casual family stop while walking the neighborhood.</p>
+<p><b>Kasalta</b> — bakery/café option closer to Ocean Park with coffee, pastries, sandwiches and plenty of simple choices. Useful if our route drifts east toward the beach rather than La Placita.</p>
+<div class="links"><a href="https://www.google.com/maps/search/?api=1&query=La+Prena+Calle+Loiza+San+Juan" target="_blank">La Preñá Maps</a><a href="https://www.google.com/maps/search/?api=1&query=Kasalta+San+Juan+Puerto+Rico" target="_blank">Kasalta Maps</a></div></div>
+
+<div class="card"><h3>🥥 Piñones / Loíza Sunday</h3>
+<p><b>GROCERY:</b> don't plan a grocery haul here; stock at Isla Verde before/after. <b>Food is part of the activity.</b> Don't schedule a separate restaurant. Graze among kiosks for alcapurrias, bacalaítos, piononos, pinchos, seafood and coconut drinks; Ariel can use fries/simple fried foods where available.</p>
+<p class="small">Next layer: shortlist 2–3 current kiosks with recent local/reddit feedback rather than choosing the first tourist-facing stand.</p></div>
+
+<div class="card"><h3>🎓 Río Piedras / UPR</h3>
+<p><b>GROCERY/MARKET:</b> Mercado de Río Piedras is the grocery/produce component of this outing and can be useful for fruit/ingredients. <b>Market lunch strategy.</b> Explore Mercado de Río Piedras and the surrounding commercial district and choose a simple local lunch there rather than traveling elsewhere. This is one of the days where food/market browsing is part of the neighborhood experience.</p>
+<p class="small">Next layer: verify the best current lunch counters/vendors and simple-food fallback for Ariel.</p></div>
+
+<div class="card"><h3>🌊 Escambrón / Condado</h3>
+<p><b>GROCERY:</b> bring drinks/snacks or a simple beach lunch from the Isla Verde supermarket rather than paying beach-area convenience prices. For snorkeling morning, prioritize <b>light food + condo return</b>, not a destination restaurant while carrying wet gear. For a separate Condado outing, we'll add inexpensive lunch/dinner choices near the lagoon/coast.</p>
+<p class="small">Rule retained: snorkeling → condo → shower/change/rest → evening is a new outing.</p></div>
+
+<div class="card"><h3>🚗 Car-day food</h3>
+<p><b>El Yunque/Luquillo:</b> selected Luquillo kiosks after rainforest/beach. <b>Coffee country:</b> coffee-farm meal/tasting plus a worthwhile mountain stop. We won't finalize these until a rental-car day is chosen.</p></div>
+</div></section>
+
+<section id="notes" class="panel"><h2>Trip notes & packing</h2>
+<div class="grid"><div class="card"><h3>Pack / bring</h3>
+<label><input type="checkbox">America the Beautiful veteran pass</label><br>
+<label><input type="checkbox">Snorkeling gear</label><br>
+<label><input type="checkbox">Beach bag</label><br>
+<label><input type="checkbox">Sunblock</label><br>
+<label><input type="checkbox">Hats</label><br>
+<label><input type="checkbox">Small cash bills for kiosks/vendors</label><br>
+<label><input type="checkbox">Dry bag / waterproof phone pouch</label>
+<p class="small">Cannabis: do not pack for the flight. Puerto Rico has a medical-cannabis program, but air travel is federally regulated; if relevant, investigate lawful local access separately.</p></div>
+<div class="card"><h3>Planning rules</h3><ul>
+<li>Some mornings = coffee + Coral Beach + no rush.</li>
+<li>Get out early only when conditions/logistics earn it.</li>
+<li>Water activity + evening generally requires condo return/shower/change.</li>
+<li>Events anchor days; other activities remain interchangeable.</li>
+<li>Always show transit mode + expected duration.</li>
+<li>Use live AMA tracking; don't waste an hour waiting for a bus.</li>
+<li>Compare Uber vs Lyft at time of ride.</li>
+<li>No paid museums unless exceptional; free museums/galleries can be optional.</li>
+<li>Driving suggestions must include toll-free alternative and parking.</li>
+</ul></div>
+<div class="card"><h3>Transit links</h3>
+<div class="links"><a href="https://www.ati.pr.gov/transportacion-urbana" target="_blank">ATI / Tren Urbano</a><a href="https://apps.apple.com/us/app/ama-m%C3%B3vil/id6502606261" target="_blank">AMA Móvil · iPhone</a><a href="https://play.google.com/store/apps/details?id=com.e3ama.amatrack_rider" target="_blank">AMA Móvil · Android</a><a href="https://www.puertoricoferry.com/en/routes-schedules/san-juan-catano/" target="_blank">Cataño ferry</a></div>
+<p class="small">AMA Móvil is the official metro bus app: real-time bus locations, arrival information, routes/stops and trip planning.</p>
+</div></div></section>
+
+</main>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.tab,.panel').forEach(x=>x.classList.remove('active'));
+ b.classList.add('active');document.getElementById(b.dataset.p).classList.add('active');
+});
+document.querySelectorAll('input[type=checkbox]').forEach((x,i)=>{
+ let k='prpack'+i;x.checked=localStorage.getItem(k)==='1';
+ x.onchange=()=>localStorage.setItem(k,x.checked?'1':'0');
+});
+</script>
+</body></html>
