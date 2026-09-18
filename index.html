@@ -17,7 +17,7 @@ main{padding:18px}.panel{display:none}.panel.active{display:block}.grid{display:
 h2{color:var(--ink);margin:5px 0 13px}.note{background:#fff9e8;border-left:4px solid #d5a93c;padding:10px 12px;margin:10px 0;border-radius:7px}
 .day{border-left:4px solid var(--accent)} ul{padding-left:20px}.small{font-size:13px;color:var(--muted)}
 input[type=checkbox]{transform:scale(1.15);margin-right:7px}
-@media(max-width:600px){h1{font-size:23px}main{padding:12px}.card{padding:13px}}
+.cluster-map{position:relative;min-height:315px;background:linear-gradient(#dceff0 0 62%,#cfe5dc 62%);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:12px 0 18px}.island{position:absolute;left:8%;right:8%;top:28%;height:40%;background:#e7d6a8;border:3px solid #8f9b78;border-radius:48% 52% 45% 55% / 58% 48% 52% 42%;transform:rotate(-2deg);box-shadow:inset 0 0 0 8px #ffffff33}.pin{position:absolute;border:0;border-radius:999px;padding:8px 10px;background:#fff;box-shadow:0 2px 8px #0003;font-weight:700;cursor:pointer}.pin:hover,.pin.active{background:var(--ink);color:#fff}.pin.home{left:73%;top:28%}.pin.east{left:82%;top:46%}.pin.north{left:35%;top:28%}.pin.central{left:42%;top:48%}.pin.south{left:44%;top:67%}.cluster-detail{display:none}.cluster-detail.active{display:block}.route{background:#f4f8f8;border:1px dashed #a8b9b7;border-radius:10px;padding:9px 11px;margin:8px 0}.warn{background:#fde9df}.price{font-weight:700;color:#315e4e}.verified{background:#dcecdf}.dateonly{background:#f5d9d0}.maplegend{font-size:12px;color:var(--muted);padding:8px 10px;position:absolute;bottom:0;left:0;right:0;background:#ffffffc9}@media(max-width:600px){h1{font-size:23px}main{padding:12px}.card{padding:13px}.cluster-map{min-height:270px}.pin{font-size:11px;padding:6px 8px}}
 </style>
 </head>
 <body>
@@ -28,6 +28,7 @@ input[type=checkbox]{transform:scale(1.15);margin-right:7px}
 <button class="tab" data-p="nocar">🚶 No-Car Menu</button>
 <button class="tab" data-p="car">🚗 Worth a Car?</button>
 <button class="tab" data-p="food">🍴 Food</button>
+<button class="tab" data-p="explore">🗺️ Explore More</button>
 <button class="tab" data-p="notes">🧳 Trip Notes</button>
 </nav>
 <main class="wrap">
@@ -35,6 +36,7 @@ input[type=checkbox]{transform:scale(1.15);margin-right:7px}
 <section id="events" class="panel active">
 <h2>Events calendar</h2>
 <div class="note">Use events as anchors, not a rigid itinerary. Pick an evening event, then build the morning/afternoon around location, weather and energy. Times below are the working times we researched; re-check shortly before going.</div>
+<div class="card"><b>🔎 Browse live Puerto Rico events:</b> RutaPR has a broad, frequently changing island-wide events calendar. Use it during the trip for last-minute festivals, music, markets and local events. <span class="links"><a href="https://ruteapr.com/Landing/Eventos?filtrarWiken=false&wikenOffset=0&q=&pueblo=&categoria=&fechaStr=" target="_blank">Open RutaPR Events</a></span></div>
 <div class="grid">
 <div class="card day"><h3>Sat · Sept 19</h3>
 <p><span class="tag anchor">CONFIRMED</span> <b>Noches al Son de Salsa</b><br><b>4:00–9:00 PM</b> · La Placita, Santurce · FREE<br>Arrival is 4 PM / condo ~5 PM, so join later rather than rush.</p>
@@ -60,6 +62,7 @@ input[type=checkbox]{transform:scale(1.15);margin-right:7px}
 <p><span class="tag option">OPTION</span> <b>Jueves de Bailoteo</b><br><b>9:00 PM–2:00 AM</b> · San Juan · FREE · late salsa option.</p></div>
 
 <div class="card day"><h3>Fri · Sept 25</h3>
+<p><span class="tag anchor">DATE-SPECIFIC</span> <b>Arecibo C3 Science & Visitor Center</b><br><b>1:00–4:00 PM</b> · Arecibo Observatory · $5/adult + $3 child = <b>$13 family</b> · online ticket required at least 24h ahead. Signals exhibition, radio-telescope artifacts, dish-remnants overlook and guided historical interpretation.</p><div class="links"><a href="https://areciboc3.org/event/science-and-visitor-center-general-admission-51/" target="_blank">Official tickets</a></div><hr>
 <p><span class="tag keep">STRONG FREE OPTION</span> <b>National Estuaries Week cultural evening</b><br><b>6:30–9:30 PM</b> · Museo de Arte de Puerto Rico · FREE with RSVP · documentary/presentation, discussion and reception. Conflicts with Jíbaro Jazz, so choose one.</p>
 <div class="links"><a href="https://estuario.org/events/" target="_blank">Event / RSVP</a><a href="https://www.google.com/maps/search/?api=1&query=Museo+de+Arte+de+Puerto+Rico" target="_blank">Maps</a></div>
 <hr>
@@ -166,6 +169,63 @@ input[type=checkbox]{transform:scale(1.15);margin-right:7px}
 <p><b>El Yunque/Luquillo:</b> selected Luquillo kiosks after rainforest/beach. <b>Coffee country:</b> coffee-farm meal/tasting plus a worthwhile mountain stop. We won't finalize these until a rental-car day is chosen.</p></div>
 </div></section>
 
+<section id="explore" class="panel">
+<h2>🗺️ Explore PR · choose a driving cluster</h2>
+<div class="note"><b>How to use this:</b> this is a menu, not an assigned itinerary. Tap a cluster on the island, then choose the stops that fit your energy and weather. Coral Beach is home base. Only date-restricted attractions are tied to a specific day.</div>
+
+<div class="cluster-map" id="clusterMap">
+  <div class="island"></div>
+  <button class="pin home" data-cluster="home">🏠 Coral Beach</button>
+  <button class="pin east" data-cluster="east">🌳 EAST</button>
+  <button class="pin north" data-cluster="north">📡 NORTH</button>
+  <button class="pin central" data-cluster="central">🏔️ CENTRAL</button>
+  <button class="pin south" data-cluster="south">🏛️ SOUTH</button>
+  <div class="maplegend">Schematic island map for trip planning · tap a cluster for its ready-made route · each stop has a Maps/read-more link below.</div>
+</div>
+
+<div id="home" class="cluster-detail active"><div class="card"><h3>🏠 Home base · Coral Beach, Isla Verde</h3><p>Use Coral Beach as the start/end point for every driving cluster. Drive times below are planning estimates from Isla Verde; traffic and mountain roads can materially change them.</p></div></div>
+
+<div id="east" class="cluster-detail">
+<h2>🌳 East · rainforest + jungle river + local food</h2>
+<div class="route"><b>Logical route:</b> 🏠 Coral Beach → 🌳 El Yunque → 💦 Las Tinajas / Charco Frío → 🍴 Luquillo Kiosks → 🏠<br><b>Why give up a San Juan day?</b> Rainforest + freshwater swimming + local-food stop are experiences you cannot reproduce in metro San Juan.</div>
+<div class="grid">
+<div class="card"><h3>🌳 El Yunque · PR-191 corridor</h3><span class="tag verified">CORE</span><span class="tag">UNIQUE TO PR</span><p>Puerto Rico's tropical rainforest: mountain viewpoints, waterfalls and short trails. Go early because parking capacity on the main recreation corridor is limited.</p><p class="meta">🚗 ~45–60 min from Coral Beach · ⏱ 2–4 hr depending hikes · 🎟 main forest sightseeing is DIY/low-cost · 🚘 PR-66 faster/tolled; PR-3 toll-free</p><div class="links"><a href="https://www.fs.usda.gov/r08/elyunque" target="_blank">Forest Service</a><a href="https://www.google.com/maps/search/?api=1&query=El+Yunque+National+Forest+Puerto+Rico" target="_blank">Maps</a></div></div>
+<div class="card"><h3>💦 Las Tinajas / Charco Frío</h3><span class="tag verified">CORE</span><span class="tag">SWIMMING</span><p>Freshwater pools formed by the Fajardo River, with waterfalls and natural rock slides near Las Tinajas. Several Charco Frío pools are shallow enough for families; avoid jumping/rope-swing behavior with Ariel.</p><p class="meta">📍 Carr. 971, Ceiba · 🚗 ~50–60 min from Coral Beach · ⏱ ~2–3 hr · 🎟 no verified government admission charge; access/parking charge can vary · ⚠️ skip after heavy rain / unsafe river flow</p><div class="links"><a href="https://www.discoverpuertorico.com/profile/charco-frio-rio-tinajas/9205" target="_blank">Current tourism info</a><a href="https://www.google.com/maps/search/?api=1&query=Charco+Frio+Rio+Tinajas+Ceiba+Puerto+Rico" target="_blank">Maps</a></div></div>
+<div class="card"><h3>🍴 Luquillo Kiosks + optional beach</h3><span class="tag verified">CORE FOOD STOP</span><p>Roughly 60 independent kiosks make this the easy post-rainforest food stop. Adults can eat Puerto Rican/seafood while Ariel has simple choices such as pizza. Beach is optional—not another obligation.</p><p class="meta">📍 Luquillo · ⏱ 1–2 hr for food / longer with beach · 💵 pay for what we eat · 🚗 Balneario parking has been listed around $3; re-check entrance status</p><div class="links"><a href="https://www.discoverpuertorico.com/profile/kioskos-de-luquillo/5042" target="_blank">Kiosks info</a><a href="https://www.google.com/maps/search/?api=1&query=Kioskos+de+Luquillo+Puerto+Rico" target="_blank">Maps</a></div></div>
+<div class="card"><h3>🌿 Las Cabezas de San Juan</h3><span class="tag option">OPTIONAL</span><span class="tag">RESERVATION</span><p>Protected Fajardo reserve with dry forest, mangroves, lagoon/coastal ecosystems and lighthouse area. More ecology than beach. The lighthouse building has restoration/access limitations, so this is optional rather than core.</p><p class="meta">📍 Fajardo · 🎟 current traditional experience about $15 adult / $11 student-senior = <b>~$41 family</b> · reservation required · verify the exact tour available before booking</p><div class="links"><a href="https://reservaciones.paralanaturaleza.org/" target="_blank">Official reservations</a><a href="https://www.google.com/maps/search/?api=1&query=Cabezas+de+San+Juan+Fajardo+Puerto+Rico" target="_blank">Maps</a></div></div>
+</div></div>
+
+<div id="central" class="cluster-detail">
+<h2>🏔️ Central / Utuado · Taíno history + coffee + wild river</h2>
+<div class="route"><b>Logical route:</b> 🏠 Coral Beach → 🗿 Caguana → ☕ Café Gran Batey → 🍴 mountain lunch → 🏞️ Cañón Blanco → 🏠<br><b>Why give up a San Juan day?</b> This is the strongest “interior Puerto Rico” day: Indigenous history, a working mountain coffee farm and a dramatic river canyon.</div>
+<div class="grid">
+<div class="card"><h3>🗿 Caguana Indigenous Ceremonial Park</h3><span class="tag verified">CORE</span><span class="tag">TAÍNO</span><p>Major Taíno ceremonial complex with bateyes/plazas, carved stones and petroglyphs. This gives Ariel context for Puerto Rico before Spanish colonization without building the day around a museum.</p><p class="meta">📍 Utuado · 🚗 ~1h35–1h50 from Coral Beach · 🕐 current tourism listing: daily 8:30 AM–4 PM · 🎟 low-cost; current published prices vary by source, so verify at entry</p><div class="links"><a href="https://www.discoverpuertorico.com/article/things-to-do-utuado" target="_blank">Current Utuado guide</a><a href="https://www.google.com/maps/search/?api=1&query=Centro+Ceremonial+Indigena+de+Caguana+Puerto+Rico" target="_blank">Maps</a></div></div>
+<div class="card"><h3>☕ Café Gran Batey</h3><span class="tag verified">OUR ONE COFFEE FARM</span><p>Family-run working coffee farm practically beside Caguana, which is why it earns the slot. See coffee production and taste the coffee without driving somewhere just for another tour.</p><p class="meta">📍 Carr. 111 Km 50.1, Bo. Caguana · 🕐 current listing: Mon–Fri 10–3; Sat–Sun 11–2 · ⏱ allow ~1–2 hr · 🎟 tour/tasting has been offered free; buy coffee if we like it · verify before driving</p><div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Cafe+Gran+Batey+Utuado+Puerto+Rico" target="_blank">Maps</a></div></div>
+<div class="card"><h3>🏞️ Cañón Blanco</h3><span class="tag verified">CORE</span><span class="tag">FREE / WILD</span><p>Huge white prehistoric-looking boulders, Río Caonillas, natural swimming pools and petroglyphs. A short hike from a small parking area reaches the canyon.</p><p class="meta">📍 Utuado · ⏱ ~1.5–2.5 hr · 🎟 natural area itself free · 🅿️ small informal parking · ⚠️ mountain-road + river/weather stop; sturdy shoes and no visit in dangerous flow</p><div class="links"><a href="https://www.discoverpuertorico.com/article/things-to-do-utuado" target="_blank">Current tourism info</a><a href="https://www.google.com/maps/search/?api=1&query=Canon+Blanco+Utuado+Puerto+Rico" target="_blank">Maps</a></div></div>
+</div></div>
+
+<div id="north" class="cluster-detail">
+<h2>📡 North / Arecibo · cave + science + coast + cheese option</h2>
+<div class="route"><b>Logical route menu:</b> 🏠 Coral Beach → 🪟 Cueva Ventana → 📡 Arecibo C3 <i>when open</i> → 🌊 Cueva del Indio coast <i>if conditions are good</i> → 🧀 Hatillo/Vaca Negra <i>only if workshop timing works</i> → 🏠<br><b>Why give up a San Juan day?</b> Northern karst geology + the Arecibo science legacy are genuinely distinctive. Do not force every optional stop into one day.</div>
+<div class="grid">
+<div class="card"><h3>🪟 Cueva Ventana</h3><span class="tag verified">CORE</span><span class="tag">GUIDED</span><p>Guided limestone-cave hike with Taíno history, cave formations and the famous giant “window” overlooking the Río Grande de Arecibo valley.</p><p class="meta">📍 Arecibo · 🕐 official tours daily; current product lists 9 AM, 11 AM, 2 PM, 4 PM · ⏱ ~90 min · 🎟 <b>$29 pp = $87 family</b> · age 3+ · helmets/flashlights included · hiking shoes recommended</p><div class="links"><a href="https://www.windowcave.com/en/products/aventura-cueva-ventana" target="_blank">Official tickets</a><a href="https://www.google.com/maps/search/?api=1&query=Cueva+Ventana+Arecibo+Puerto+Rico" target="_blank">Maps</a></div></div>
+<div class="card"><h3>📡 Arecibo C3 STEM Center</h3><span class="tag dateonly">FRI SEPT 25 ONLY THIS TRIP</span><p>The former Arecibo Observatory site: “Signals” exhibition, radio-telescope artifacts trail, terrace overlooking dish remnants and guided historical interpretation.</p><p class="meta">🕐 <b>Fri Sept 25 · 1–4 PM</b> · 🎟 $5/adult + $3 Ariel = <b>$13 family</b> · tickets required online ≥24h ahead · no walk-ins · uneven terrain / limited services</p><div class="links"><a href="https://areciboc3.org/event/science-and-visitor-center-general-admission-51/" target="_blank">Official Sept 25 tickets</a><a href="https://www.google.com/maps/search/?api=1&query=Arecibo+C3+STEM+Center+Puerto+Rico" target="_blank">Maps</a></div></div>
+<div class="card"><h3>🌊 Cueva del Indio · Arecibo coast</h3><span class="tag option">OPTIONAL</span><span class="tag warn">ROUGH TERRAIN</span><p>Wild Atlantic cliffs, arches and one of Puerto Rico's major concentrations of Taíno petroglyphs. This is primarily dramatic coast + archaeology, not another conventional cave tour.</p><p class="meta">📍 Arecibo coast · ⏱ ~1–1.5 hr · 🎟 no reliable official admission price found · ⚠️ rocky access, elevation changes and exposed coastal terrain; with Ariel treat as a scenery/petroglyph stop, not a climbing challenge</p><div class="links"><a href="https://www.discoverpuertorico.com/es/articulo/la-ruta-taina-y-la-cultura-indigena-en-puerto-rico" target="_blank">Current tourism description</a><a href="https://www.google.com/maps/search/?api=1&query=Cueva+del+Indio+Arecibo+Puerto+Rico" target="_blank">Maps</a></div></div>
+<div class="card"><h3>🧀 Vaca Negra · Hatillo</h3><span class="tag option">AVI FAVORITE</span><span class="tag">$$$</span><p>Hands-on Puerto Rican aged-cheese making: dairy/cheese explanation, tasting, make and mark a wheel, yogurt tasting and cheese-cellar visit. The cheese stays to age for two months.</p><p class="meta">📍 Carr. 493, Hatillo · shop hours Wed–Sun 9–3 · workshop dates are reservation-based · official page says <b>one cheese per couple</b> and special individual/group arrangements require calling · current special offers vary, so <b>do not assume $95</b> without checking the booking date</p><div class="links"><a href="https://vacanegra.com/product/make-your-own-cheese-limited-time-offer/" target="_blank">Official experience details</a><a href="https://www.google.com/maps/search/?api=1&query=Vaca+Negra+Hatillo+Puerto+Rico" target="_blank">Maps</a></div></div>
+</div></div>
+
+<div id="south" class="cluster-detail">
+<h2>🏛️ South / Ponce · historic estate + architecture</h2>
+<div class="route"><b>Logical route:</b> 🏠 Coral Beach → 🌿 Hacienda Buena Vista → 🏙️ Historic Ponce → 🏰 Castillo Serrallés <i>if current tour is available</i> → 🏠<br><b>Why give up a San Juan day?</b> Ponce gives us a different Puerto Rican city and southern architecture; Buena Vista adds agriculture, engineering and slavery/history rather than repeating a coffee tour.</div>
+<div class="grid">
+<div class="card"><h3>🌿 Hacienda Buena Vista</h3><span class="tag verified">STRONG IF TOUR AVAILABLE</span><p>Historic estate above Ponce where the story is water power, agriculture and the people who worked the hacienda. The traditional interpretation includes historic buildings, canal system and unusual machinery; Para la Naturaleza also runs cacao-focused programs here.</p><p class="meta">📍 PR-123 Km 16.8, Ponce · 🎟 official reservation system lists <b>$15 adult / $11 student or 65+ = ~$41 family</b> for many programs · reservation/calendar varies · call/reserve through Para la Naturaleza when a suitable tour appears</p><div class="links"><a href="https://reservaciones.paralanaturaleza.org/" target="_blank">Official reservations</a><a href="https://www.google.com/maps/search/?api=1&query=Hacienda+Buena+Vista+Ponce+Puerto+Rico" target="_blank">Maps</a></div></div>
+<div class="card"><h3>🏙️ Historic Ponce</h3><span class="tag verified">FREE CORE</span><p>Plaza Las Delicias, Parque de Bombas exterior, cathedral area and distinctive southern/Creole architecture. This is the city portion of the day, not a paid-attraction checklist.</p><p class="meta">🚗 ~1h40–2h from Coral Beach depending traffic · ⏱ 2–3 hr + food · 🎟 streets/plaza free · 🅿️ use a central garage/lot rather than circling for curb parking</p><div class="links"><a href="https://www.discoverpuertorico.com/article/things-to-do-ponce" target="_blank">Ponce guide</a><a href="https://www.google.com/maps/search/?api=1&query=Plaza+Las+Delicias+Ponce+Puerto+Rico" target="_blank">Maps</a></div></div>
+<div class="card"><h3>🏰 Castillo Serrallés</h3><span class="tag option">OPTIONAL</span><p>1930s hilltop mansion of the Serrallés/Don Q rum family, with architecture, gardens and views over Ponce. It stays optional until we have a current official Sept. 2026 tour/price that fits.</p><p class="meta">📍 Ponce · ⏱ ~1–1.5 hr · 🎟 verify current tour price/hours before choosing this over more time in town</p><div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Castillo+Serralles+Ponce+Puerto+Rico" target="_blank">Maps</a></div></div>
+</div></div>
+
+<div class="note"><b>Intentionally excluded:</b> Río Camuy Cave Park while closed; duplicate coffee farms; weekend-only cacao tours that conflict with our weekend plans; ordinary beaches that do not add enough beyond Isla Verde/Luquillo/Escambrón; and museum-only Taíno stops unless they happen to fall directly on a better route.</div>
+</section>
+
 <section id="notes" class="panel"><h2>Trip notes & packing</h2>
 <div class="grid"><div class="card"><h3>Packing checklist</h3>
 <p><b>Clothes</b></p>
@@ -234,6 +294,10 @@ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{
 document.querySelectorAll('input[type=checkbox]').forEach((x,i)=>{
  let k='prpack'+i;x.checked=localStorage.getItem(k)==='1';
  x.onchange=()=>localStorage.setItem(k,x.checked?'1':'0');
+});
+document.querySelectorAll('.pin[data-cluster]').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.cluster-detail,.pin[data-cluster]').forEach(x=>x.classList.remove('active'));
+ b.classList.add('active'); const d=document.getElementById(b.dataset.cluster); if(d){d.classList.add('active');d.scrollIntoView({behavior:'smooth',block:'start'});}
 });
 </script>
 </body></html>
